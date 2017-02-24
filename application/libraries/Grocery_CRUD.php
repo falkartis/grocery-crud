@@ -5109,7 +5109,7 @@ class Grocery_CRUD extends grocery_CRUD_States
 	 * @param $css_class
 	 * @param $url_callback
 	 */
-	public function add_action( $label, $image_url = '', $link_url = '', $css_class = '', $url_callback = null)
+	public function add_action( $label, $image_url = '', $link_url = '', $css_class = '', $url_callback = null, $image_callback = null)
 	{
 		$unique_id = substr($label,0,1).substr(md5($label.$link_url),-8); //The unique id is used for class name so it must begin with a string
 
@@ -5119,6 +5119,7 @@ class Grocery_CRUD extends grocery_CRUD_States
 			'link_url'		=> $link_url,
 			'css_class' 	=> $css_class,
 			'url_callback' 	=> $url_callback,
+			'image_callback'=> $image_callback,
 			'url_has_http'	=> substr($link_url,0,7) == 'http://' || substr($link_url,0,8) == 'https://' ? true : false
 		);
 
